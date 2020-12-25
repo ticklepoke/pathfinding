@@ -2,7 +2,7 @@
   "name": "pathfinding",
   "version": "0.1.2",
   "private": true,
-  "homepage": "http://ticklepoke.github.io/pathfinding",
+  "homepage": "https://ticklepoke.github.io/pathfinding",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -33,6 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "release": "standard-version",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
