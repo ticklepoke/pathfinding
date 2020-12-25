@@ -1,13 +1,13 @@
-import { Col, Row } from 'antd';
-import { chunk, range } from 'lodash';
-import React, { useEffect, useState } from 'react';
-import { SubSink } from 'subsink';
+import { Col, Row } from "antd";
+import { chunk, range } from "lodash";
+import React, { useEffect, useState } from "react";
+import { SubSink } from "subsink";
 
-import { mouseClick$ } from 'interactions';
-import AdjacencyList from 'service/AdjacencyList';
-import { findPath$ } from 'service/store';
+import { mouseClick$ } from "interactions";
+import AdjacencyList from "service/AdjacencyList";
+import { findPath$ } from "service/store";
 
-import GridItem from './GridItem';
+import GridItem from "./GridItem";
 
 export default function NumberGrid() {
     const [startingNode, setStartingNode] = useState<string>("1");
@@ -33,13 +33,12 @@ export default function NumberGrid() {
 
     const grid = range(0, 100, 1);
     const rows = chunk(grid, 10);
-
     return (
         <>
             {rows.map((cols, i) => (
                 <Row gutter={0} key={i}>
-                    {cols.map((col) => (
-                        <Col>
+                    {cols.map((col, j) => (
+                        <Col key={j}>
                             <GridItem uuid={col} start={parseInt(startingNode)} path$={path$} />
                         </Col>
                     ))}
