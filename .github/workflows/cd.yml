@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  buildTest:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - uses: actions/upload-artifact@master
+        with:
+          name: node_modules
+          path: ./node_modules
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifacrt@master
+        with:
+          name: node_modules
+          path: ./node_modules
+      - name: Deploy
+        run: yarn run deploy
