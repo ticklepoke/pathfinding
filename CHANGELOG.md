@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/ticklepoke/pathfinding/compare/v0.1.9...v0.1.10) (2020-12-25)
+
+
+### Build System
+
+* **tsconfig:** Change base url ([82f24e8](https://github.com/ticklepoke/pathfinding/commit/82f24e8e2b5d7a919e4f9b623544a1781a5a9cd9))
+
+
+### Code Refactoring
+
+* **src:** Refactor imports to root ([7fb1bf2](https://github.com/ticklepoke/pathfinding/commit/7fb1bf2714ee2f720d6e2e4d9f4fc5b11cf3ec73)), closes [#11](https://github.com/ticklepoke/pathfinding/issues/11)
+
 ### [0.1.9](https://github.com/ticklepoke/pathfinding/compare/v0.1.8...v0.1.9) (2020-12-25)
 
 
