@@ -6,9 +6,14 @@ import AdjacencyList from "../service/AdjacencyList";
 import { findPath$ } from "../service/store";
 import { SubSink } from "subsink";
 import { mouseClick$ } from "../interactions";
+import { useDispatch } from "react-redux";
+import { obstaclesActionCreators } from "../store/Obstacles";
 
 export default function NumberGrid() {
   const [startingNode, setStartingNode] = useState<string>("1");
+  // TODO: shift this to redux
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const subSink = new SubSink();
@@ -16,11 +21,12 @@ export default function NumberGrid() {
       // TODO: combine with key down
       let targetElement = target as HTMLElement;
       setStartingNode(targetElement.id);
+      dispatch(obstaclesActionCreators.ADD_GRID_ITEM(targetElement.id));
     });
     return () => {
       subSink.unsubscribe();
     };
-  }, []);
+  }, [dispatch]);
 
   const adjList = AdjacencyList(10, 10);
   const path$ = findPath$(adjList, parseInt(startingNode));
