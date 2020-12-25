@@ -33,6 +33,7 @@ export default function NumberGrid() {
 
     const grid = range(0, 100, 1);
     const rows = chunk(grid, 10);
+
     return (
         <>
             {rows.map((cols, i) => (
