@@ -1,6 +1,7 @@
-import { combineReducers } from "redux";
-import { obstaclesReducer } from "./Obstacles";
-import { State } from "./state";
+import { combineReducers } from 'redux';
+
+import { obstaclesReducer } from './Obstacles';
+import { State } from './state';
 
 const createRootReducer = () =>
   combineReducers<State>({

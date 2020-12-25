@@ -1,11 +1,13 @@
-import { Col, Row } from "antd";
-import { chunk, range } from "lodash";
-import React, { useEffect, useState } from "react";
-import GridItem from "./GridItem";
-import AdjacencyList from "../service/AdjacencyList";
-import { findPath$ } from "../service/store";
-import { SubSink } from "subsink";
-import { mouseClick$ } from "../interactions";
+import { Col, Row } from 'antd';
+import { chunk, range } from 'lodash';
+import React, { useEffect, useState } from 'react';
+import { SubSink } from 'subsink';
+
+import { mouseClick$ } from 'interactions';
+import AdjacencyList from 'service/AdjacencyList';
+import { findPath$ } from 'service/store';
+
+import GridItem from './GridItem';
 
 export default function NumberGrid() {
   const [startingNode, setStartingNode] = useState<string>("1");

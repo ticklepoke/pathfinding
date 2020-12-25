@@ -1,7 +1,8 @@
-import { from, of } from "rxjs";
-import { concatMap, delay } from "rxjs/operators";
-import { IAdjacencyList } from "./AdjacencyList";
-import Bfs from "./Bfs";
+import { from, of } from 'rxjs';
+import { concatMap, delay } from 'rxjs/operators';
+
+import { IAdjacencyList } from 'service/AdjacencyList';
+import Bfs from 'service/Bfs';
 
 export function findPath$(
   adjList: IAdjacencyList,
