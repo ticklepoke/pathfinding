@@ -37,11 +37,9 @@ jobs:
         with:
           fetch-depth: 0
       - uses: fregante/setup-git-user@v1
-      - run: git branch
-      - run: git log
-      # - name: Install dependencies
-      #   run: yarn install
-      # - name: Release
-      #   run: yarn run release
-      # - name: Push Tags
-      #   run: git push --follow-tags origin main
+      - name: Install dependencies
+        run: yarn install
+      - name: Release
+        run: yarn run release
+      - name: Push Tags
+        run: git push --follow-tags origin main
