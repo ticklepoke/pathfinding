@@ -11,3 +11,9 @@ To cut a new release:
 ```sh
 yarn run release
 ```
+
+## Status
+
+![CD](https://github.com/ticklepoke/pathfinding/workflows/CD/badge.svg?branch=main&event=push)
+
+![CI](https://github.com/ticklepoke/pathfinding/workflows/CI/badge.svg)
