@@ -15,10 +15,6 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
-      - uses: actions/upload-artifact@master
-        with:
-          name: node_modules
-          path: ./node_modules
 
   deploy:
     name: Deploy
@@ -26,10 +22,8 @@ jobs:
     needs: buildTest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifacrt@master
-        with:
-          name: node_modules
-          path: ./node_modules
+      - name: Install dependencies
+        run: yarn install
       - name: Deploy
         run: yarn run deploy
 
@@ -39,9 +33,7 @@ jobs:
     needs: buildTest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifacrt@master
-        with:
-          name: node_modules
-          path: ./node_modules
+      - name: Install dependencies
+        run: yarn install
       - name: Release
         run: yarn run release
