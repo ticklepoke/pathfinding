@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/ticklepoke/pathfinding/compare/v0.1.10...v0.1.11) (2020-12-25)
+
+
+### Bug Fixes
+
+* **src:** Fix missing key in map ([dd7eaa0](https://github.com/ticklepoke/pathfinding/commit/dd7eaa0e4ac90a900e30474e2000ec4ec7a957ad))
+
+
+### Build System
+
+* **deps:** Install and configure husky, eslint, prettier ([f35beb8](https://github.com/ticklepoke/pathfinding/commit/f35beb86e81c3a8d777581425f6059bf7c375d3a))
+* **deps:** Install husky and lint staged ([d7fb2ed](https://github.com/ticklepoke/pathfinding/commit/d7fb2ed5f435372f81ca47d08de99431a0d6c10e))
+* **Test:** Test commit hook linter ([8c90ec2](https://github.com/ticklepoke/pathfinding/commit/8c90ec2d865b1f72330aafb83844ee60f3dacf99))
+
+
+### Code Refactoring
+
+* **Refactor:** Refactor code styles ([014d84b](https://github.com/ticklepoke/pathfinding/commit/014d84b1b56fe07b24aca53a3122f76439bb0e31))
+
+
+### Styling
+
+* **Line Break:** Test line break of commit hook ([605e312](https://github.com/ticklepoke/pathfinding/commit/605e3126b5820d5690c047bfe365e54b4532ae6c))
+* **Refactor:** Fix code print width ([443fab6](https://github.com/ticklepoke/pathfinding/commit/443fab65e3f56e3496fbc29f7a6cea567350288f))
+
 ### [0.1.10](https://github.com/ticklepoke/pathfinding/compare/v0.1.9...v0.1.10) (2020-12-25)
 
 
