@@ -33,6 +33,10 @@ jobs:
     needs: buildTest
     steps:
       - uses: actions/checkout@v2
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          name: "Nigel Lee"
+          email: "lee.nigel@hotmail.com"
       - name: Install dependencies
         run: yarn install
       - name: Release
