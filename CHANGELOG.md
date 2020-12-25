@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/ticklepoke/pathfinding/compare/v0.1.1...v0.1.2) (2020-12-25)
+
+
+### Docs
+
+* **readme:** Add release documentation ([fd8c9c8](https://github.com/ticklepoke/pathfinding/commit/fd8c9c81e8cdb95911a65b61f87be78317eac9e2))
+
 ### [0.1.1](https://github.com/ticklepoke/pathfinding/compare/v0.1.0...v0.1.1) (2020-12-25)
 
 
