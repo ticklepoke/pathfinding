@@ -1,4 +1,4 @@
-import { chunk, range } from "lodash";
+import { chunk, range } from 'lodash';
 
 export interface IAdjacencyList {
   [key: number]: number[];

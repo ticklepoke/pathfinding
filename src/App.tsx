@@ -1,9 +1,11 @@
-import { Tag } from "antd";
-import React, { useEffect, useState } from "react";
-import { SubSink } from "subsink";
-import "./App.css";
-import NumberGrid from "./components/NumberGrid";
-import { keyDown$, keyUp$ } from "./interactions";
+import { Tag } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { SubSink } from 'subsink';
+
+import NumberGrid from 'components/NumberGrid';
+import { keyDown$, keyUp$ } from 'interactions';
+
+import './App.css';
 
 function App() {
   const [keyPressed, setKeyPressed] = useState<string | null>();

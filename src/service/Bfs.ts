@@ -1,4 +1,4 @@
-import { IAdjacencyList } from "./AdjacencyList";
+import { IAdjacencyList } from 'service/AdjacencyList';
 
 export default function Bfs(
   adjList: IAdjacencyList,
@@ -28,5 +28,5 @@ export default function Bfs(
     queue.push(...neighbours);
   }
 
-  return found
+  return found;
 }

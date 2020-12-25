@@ -1,4 +1,4 @@
-import { GridItem } from "../../types/Node";
+import { GridItem } from 'types/Node';
 
 export interface ObstaclesState {
   obstacles: GridItem[];
