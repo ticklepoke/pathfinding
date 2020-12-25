@@ -37,8 +37,8 @@ export default function NumberGrid() {
         <>
             {rows.map((cols, i) => (
                 <Row gutter={0} key={i}>
-                    {cols.map((col, j) => (
-                        <Col key={j}>
+                    {cols.map((col) => (
+                        <Col>
                             <GridItem uuid={col} start={parseInt(startingNode)} path$={path$} />
                         </Col>
                     ))}
