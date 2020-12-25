@@ -12,6 +12,14 @@ To cut a new release:
 yarn run release
 ```
 
+## Deployment
+
+To deploy to github pages:
+
+```sh
+yarn run deploy
+```
+
 ## Status
 
 ![CD](https://github.com/ticklepoke/pathfinding/workflows/CD/badge.svg?branch=main&event=push)
