@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build
+      # - name: Install dependencies
+      #   run: yarn install
+      # - name: Build
+      #   run: yarn build
 
   deploy:
     name: Deploy
@@ -22,10 +22,11 @@ jobs:
     needs: buildTest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install
-      - name: Deploy
-        run: yarn run deploy
+      - uses: fregante/setup-git-user@v1
+      # - name: Install dependencies
+      #   run: yarn install
+      # - name: Deploy
+      #   run: yarn run deploy
 
   release:
     name: Release
@@ -34,9 +35,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: fregante/setup-git-user@v1
-      - name: Install dependencies
-        run: yarn install
-      - name: Release
-        run: yarn run release
-      - name: Push Tags
-        run: git push --follow-tags origin main
+      - run: git branch
+      - run: git log
+      # - name: Install dependencies
+      #   run: yarn install
+      # - name: Release
+      #   run: yarn run release
+      # - name: Push Tags
+      #   run: git push --follow-tags origin main
