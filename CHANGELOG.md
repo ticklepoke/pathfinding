@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/ticklepoke/pathfinding/compare/v0.1.0...v0.1.1) (2020-12-25)
+
+
+### Build System
+
+* **dependencies:** Add release scripts ([61bd831](https://github.com/ticklepoke/pathfinding/commit/61bd831a5809152cabc1387a9cf5ccd42402d0e0))
+
 ## 0.1.0 (2020-12-25)
 
 
