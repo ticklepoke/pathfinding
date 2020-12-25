@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/ticklepoke/pathfinding/compare/v0.1.8...v0.1.9) (2020-12-25)
+
+
+### Build System
+
+* **deps:** bump node-notifier from 8.0.0 to 8.0.1 ([79bedca](https://github.com/ticklepoke/pathfinding/commit/79bedca7464c296b25f529ccafbf01073c2fe477))
+
 ### [0.1.8](https://github.com/ticklepoke/pathfinding/compare/v0.1.7...v0.1.8) (2020-12-25)
 
 
