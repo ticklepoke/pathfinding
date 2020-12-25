@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/ticklepoke/pathfinding/compare/v0.1.7...v0.1.8) (2020-12-25)
+
+
+### Build System
+
+* **deps:** bump ini from 1.3.5 to 1.3.8 ([1e918a1](https://github.com/ticklepoke/pathfinding/commit/1e918a1220932fa8285df549294ca4fa7398c736))
+
 ### [0.1.7](https://github.com/ticklepoke/pathfinding/compare/v0.1.6...v0.1.7) (2020-12-25)
 
 ### [0.1.6](https://github.com/ticklepoke/pathfinding/compare/v0.1.5...v0.1.6) (2020-12-25)
