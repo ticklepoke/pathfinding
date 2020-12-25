@@ -1,0 +1,18 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 0.1.0 (2020-12-25)
+
+
+### Features
+
+* **store:** Add obstacles selector, action, reducer ([cfe5803](https://github.com/ticklepoke/pathfinding/commit/cfe5803ee640548684191d8f60035d1338adb596))
+* **store:** Add obstacles state ([07c73e1](https://github.com/ticklepoke/pathfinding/commit/07c73e13785b8227d7edbd0bf85cb048e73912d8))
+* **store:** Add store setup ([c8a7c7e](https://github.com/ticklepoke/pathfinding/commit/c8a7c7e82a990acaa18a22a75b9298e96b6ffe45))
+* **types:** Add GridItem interface ([62bc5ec](https://github.com/ticklepoke/pathfinding/commit/62bc5ecbbafc5394c069fd2aa2549c9714970540))
+
+
+### Build System
+
+* **dependencies:** Install semver dependencies ([457a1be](https://github.com/ticklepoke/pathfinding/commit/457a1beb13747bef33273d7e987688671687d9d2))
