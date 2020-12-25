@@ -20,4 +20,8 @@ To deploy to github pages:
 yarn run deploy
 ```
 
-TODO: Add support for automated publishes via github actions
+## Status
+
+![CD](https://github.com/ticklepoke/pathfinding/workflows/CD/badge.svg?branch=main&event=push)
+
+![CI](https://github.com/ticklepoke/pathfinding/workflows/CI/badge.svg)
