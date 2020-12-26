@@ -3,20 +3,14 @@ import {
 	NodeExpandOutlined,
 	StopOutlined,
 } from "@ant-design/icons";
-import {
-	Button,
-	Form,
-	InputNumber,
-	Menu,
-	Select,
-	Tooltip,
-	Typography,
-} from "antd";
+import { Button, Form, InputNumber, Select, Tooltip, Typography } from "antd";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { SubSink } from "subsink";
 
 import NumberGrid from "components/NumberGrid";
 import { keyDown$, keyUp$ } from "interactions";
+import { getGridRowsCols, gridActionCreators } from "store/Grid";
 
 import "./App.css";
 
@@ -33,6 +27,9 @@ export function App() {
 	const [, setKeyPressed] = useState<string | null>();
 
 	const [drawTool, setDrawTool] = useState<DrawTools | null>();
+
+	const { rows, cols } = useSelector(getGridRowsCols);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		const subSink = new SubSink();
@@ -60,7 +57,7 @@ export function App() {
 
 	return (
 		<div>
-			<Menu className="vh-100 w-300px p-10" mode="vertical" expandIcon={null}>
+			<div className="vh-100 w-300px p-10 border-right-gray">
 				<Title level={3}>Pathfinding</Title>
 				<Text strong>Tools</Text>
 				<div className="w-100p d-flex justify-start mt-10 mb-20">
@@ -99,16 +96,32 @@ export function App() {
 				<Text strong>Grid Size</Text>
 				<Form className="mt-10 mb-20">
 					<Tooltip title="Width" placement="bottomRight">
-						<InputNumber min={1} max={50} defaultValue={10} />
+						<InputNumber
+							min={1}
+							max={50}
+							value={cols}
+							onChange={(val) =>
+								typeof val === "number" &&
+								dispatch(gridActionCreators.SET_COL(val))
+							}
+						/>
 					</Tooltip>
 					<Tooltip title="Height" placement="bottomRight">
-						<InputNumber min={1} max={50} defaultValue={10} />
+						<InputNumber
+							min={1}
+							max={50}
+							value={rows}
+							onChange={(val) =>
+								typeof val === "number" &&
+								dispatch(gridActionCreators.SET_ROW(val))
+							}
+						/>
 					</Tooltip>
 				</Form>
 				<Button className="w-100p" type="primary">
 					Start Pathfinding
 				</Button>
-			</Menu>
+			</div>
 			<NumberGrid />
 		</div>
 	);

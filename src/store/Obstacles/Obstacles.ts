@@ -1,6 +1,8 @@
-import actionCreatorFactory from "typescript-fsa";
 import * as _ from "lodash";
+
+import actionCreatorFactory from "typescript-fsa";
 import { reducerWithInitialState as makeReducer } from "typescript-fsa-reducers";
+
 import { ObstaclesState } from "./types";
 
 const actionCreator = actionCreatorFactory("OBSTACLES");
