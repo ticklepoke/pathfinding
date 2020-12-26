@@ -22,6 +22,7 @@ jobs:
     needs: buildTest
     steps:
       - uses: actions/checkout@v2
+      - run: git remote set-url origin https://ticklepoke@github.com/ticklepoke/pathfinding.git
       - run: git config user.name "Nigel Lee"
       - run: git config user.email "lee.nigel@hotmail.com"
       - name: Install dependencies
