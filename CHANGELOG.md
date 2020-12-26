@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/ticklepoke/pathfinding/compare/v0.1.14...v0.1.15) (2020-12-26)
+
+
+### Bug Fixes
+
+* **cd:** Fix missing git credentials ([41da6ce](https://github.com/ticklepoke/pathfinding/commit/41da6ce83c454c593a921cabc8fa556e38d088ab))
+
 ### [0.1.14](https://github.com/ticklepoke/pathfinding/compare/v0.1.13...v0.1.14) (2020-12-26)
 
 ### [0.1.13](https://github.com/ticklepoke/pathfinding/compare/v0.1.11...v0.1.13) (2020-12-26)
