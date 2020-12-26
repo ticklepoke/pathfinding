@@ -35,19 +35,8 @@ export default function NumberGrid() {
 	const rows = chunk(grid, 10);
 
 	return (
-		<div
-			style={{
-				position: "absolute",
-				left: "300px",
-				top: 0,
-				width: "calc(100vw - 300px)",
-				height: "100%",
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-			}}
-		>
-			<div style={{ overflow: "auto" }}>
+		<div className="number-grid-container d-flex justify-center align-center">
+			<div className="overflow-auto">
 				{rows.map((cols, i) => (
 					<Row gutter={0} key={i} wrap={false}>
 						{cols.map((col, j) => (

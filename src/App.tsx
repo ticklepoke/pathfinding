@@ -60,22 +60,10 @@ export function App() {
 
 	return (
 		<div>
-			<Menu
-				style={{ height: "100vh", width: "300px", padding: "10px" }}
-				mode="vertical"
-				expandIcon={null}
-			>
+			<Menu className="vh-100 w-300px p-10" mode="vertical" expandIcon={null}>
 				<Title level={3}>Pathfinding</Title>
 				<Text strong>Tools</Text>
-				<div
-					style={{
-						width: "100%",
-						display: "flex",
-						justifyContent: "flex-start",
-						marginTop: "10px",
-						marginBottom: "20px",
-					}}
-				>
+				<div className="w-100p d-flex justify-start mt-10 mb-20">
 					<Tooltip title="Draw Starting Node" placement="bottomRight">
 						<Button
 							type={
@@ -104,15 +92,12 @@ export function App() {
 					</Tooltip>
 				</div>
 				<Text strong>Algorithm</Text>
-				<Select
-					style={{ width: "100%", marginTop: "10px", marginBottom: "20px" }}
-					placeholder="Select Algorithm"
-				>
+				<Select className="w-100p mt-10 mb-20" placeholder="Select Algorithm">
 					<Option value="1">Breadth First Search</Option>
 					<Option value="2">Depth First Search</Option>
 				</Select>
 				<Text strong>Grid Size</Text>
-				<Form style={{ marginTop: "10px", marginBottom: "20px" }}>
+				<Form className="mt-10 mb-20">
 					<Tooltip title="Width" placement="bottomRight">
 						<InputNumber min={1} max={50} defaultValue={10} />
 					</Tooltip>
@@ -120,7 +105,7 @@ export function App() {
 						<InputNumber min={1} max={50} defaultValue={10} />
 					</Tooltip>
 				</Form>
-				<Button style={{ width: "100%" }} type="primary">
+				<Button className="w-100p" type="primary">
 					Start Pathfinding
 				</Button>
 			</Menu>
