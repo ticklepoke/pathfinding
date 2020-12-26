@@ -30,7 +30,7 @@ export enum DrawTools {
 }
 
 export function App() {
-	const [keyPressed, setKeyPressed] = useState<string | null>();
+	const [, setKeyPressed] = useState<string | null>();
 
 	const [drawTool, setDrawTool] = useState<DrawTools | null>();
 
