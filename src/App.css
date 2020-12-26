@@ -46,6 +46,10 @@
 	overflow: auto;
 }
 
+.border-right-gray {
+	border-right: 1px solid lightgray;
+}
+
 /* Custom component related classnames */
 
 .grid {
