@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.26](https://github.com/ticklepoke/pathfinding/compare/v0.1.25...v0.1.26) (2020-12-26)
+
+
+### Features
+
+* **Grid:** Link grid to store ([3a35815](https://github.com/ticklepoke/pathfinding/commit/3a35815f0066dddaefa10436bd05ef32a9a12c26))
+* **store:** Add grid size to store ([0ccec90](https://github.com/ticklepoke/pathfinding/commit/0ccec90749e56c47fb92a2f5021e2ffaeb0083db))
+
+
+### Build System
+
+* **eslint:** Exclude imports from line break ([7ba5b3c](https://github.com/ticklepoke/pathfinding/commit/7ba5b3c94268e056e0dc89b1d9a01f5cc5c26285))
+
+
+### Code Refactoring
+
+* **Menu:** Move menu to separate component ([70f8c02](https://github.com/ticklepoke/pathfinding/commit/70f8c02affb1d3636a64aa973c84139d5fc275c6))
+* **Menu:** Remove menu class ([74107e1](https://github.com/ticklepoke/pathfinding/commit/74107e17919c0882edccf52785e46eccc80da4f4))
+
 ### [0.1.25](https://github.com/ticklepoke/pathfinding/compare/v0.1.24...v0.1.25) (2020-12-26)
 
 ### [0.1.24](https://github.com/ticklepoke/pathfinding/compare/v0.1.23...v0.1.24) (2020-12-26)
