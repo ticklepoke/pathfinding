@@ -1,4 +1,4 @@
-import { State } from 'store/state';
+import { State } from "store/state";
 
 const getObstaclesState = (state: State) => state.obstacles;
 
