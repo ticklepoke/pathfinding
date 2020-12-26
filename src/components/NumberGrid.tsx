@@ -35,20 +35,33 @@ export default function NumberGrid() {
 	const rows = chunk(grid, 10);
 
 	return (
-		<>
-			{rows.map((cols, i) => (
-				<Row gutter={0} key={i}>
-					{cols.map((col, j) => (
-						<Col key={j}>
-							<GridItem
-								uuid={col}
-								start={parseInt(startingNode)}
-								path$={path$}
-							/>
-						</Col>
-					))}
-				</Row>
-			))}
-		</>
+		<div
+			style={{
+				position: "absolute",
+				left: "300px",
+				top: 0,
+				width: "calc(100vw - 300px)",
+				height: "100%",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+			}}
+		>
+			<div style={{ overflow: "auto" }}>
+				{rows.map((cols, i) => (
+					<Row gutter={0} key={i} wrap={false}>
+						{cols.map((col, j) => (
+							<Col key={j}>
+								<GridItem
+									uuid={col}
+									start={parseInt(startingNode)}
+									path$={path$}
+								/>
+							</Col>
+						))}
+					</Row>
+				))}
+			</div>
+		</div>
 	);
 }
