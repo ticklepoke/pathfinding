@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/ticklepoke/pathfinding/compare/v0.1.11...v0.1.13) (2020-12-26)
+
+
+### Features
+
+* **index:** Change html titile ([a0314eb](https://github.com/ticklepoke/pathfinding/commit/a0314eb93584ac04b42f31079381b6b9ef607a35))
+* **src:** Add static UI elements ([d1ea030](https://github.com/ticklepoke/pathfinding/commit/d1ea030d7607f2431fb05724f7d7d7f6d93561d3))
+* **src:** Toggle Buttons ([61dda26](https://github.com/ticklepoke/pathfinding/commit/61dda26c231703ccb0bf97c9d85ba3dea8ecf763))
+
+
+### Bug Fixes
+
+* **src:** Fix unused vars ([d526cf0](https://github.com/ticklepoke/pathfinding/commit/d526cf0e2cfe4c7c7136ad522ad9e2852790994d))
+
+
+### Styling
+
+* **all:** Lint codebase according to new rules ([b9fbc56](https://github.com/ticklepoke/pathfinding/commit/b9fbc56c01f69ea6d0aef97461769d8abbc1cb87))
+* **src:** Fix App.tsx formatting ([2055299](https://github.com/ticklepoke/pathfinding/commit/2055299af5a19fd9a6e35dd3b97ed5792af3eef7))
+
+
+### Build System
+
+* **eslint:** Add eslint configs ([f24c250](https://github.com/ticklepoke/pathfinding/commit/f24c250ce8481cc8e9a9d3df83fee3d2bfc14c12))
+* **eslint:** Add Max Character Width ([ef841d7](https://github.com/ticklepoke/pathfinding/commit/ef841d74025cb9fcf79061c1621ea3fc1f9e2377))
+
+
+### Code Refactoring
+
+* **src:** Refactor inline styles to classname ([395f00e](https://github.com/ticklepoke/pathfinding/commit/395f00e8defd36d98747c9134bb272b9f80ad451))
+
+
+### Others
+
+* **release:** 0.1.10 ([803df38](https://github.com/ticklepoke/pathfinding/commit/803df38e67bf90b83468b158aa803cf2eca34666))
+* **release:** 0.1.12 ([fca0c2e](https://github.com/ticklepoke/pathfinding/commit/fca0c2e61b0a2b54911da9e07e43b213ed9c64dd))
+
+
+### CI
+
+* **CD:** Fix missing deploy script ([230c90f](https://github.com/ticklepoke/pathfinding/commit/230c90f0bfb21e87650ff0f068bcfd269630a47f))
+
 ### [0.1.12](https://github.com/ticklepoke/pathfinding/compare/v0.1.11...v0.1.12) (2020-12-26)
 
 
