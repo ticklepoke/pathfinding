@@ -1,6 +1,6 @@
 {
   "name": "pathfinding",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "private": true,
   "homepage": "https://ticklepoke.github.io/pathfinding",
   "dependencies": {
