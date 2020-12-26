@@ -22,6 +22,8 @@ jobs:
     needs: buildTest
     steps:
       - uses: actions/checkout@v2
+      - run: git config --global user.name "Nigel Lee"
+      - run: git config --global user.email "lee.nigel@hotmail.com"
       - name: Install dependencies
         run: yarn install
       - name: Deploy
