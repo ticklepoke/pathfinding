@@ -23,6 +23,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: git remote set-url origin https://ticklepoke:${{ secrets.GH_PW }}@github.com/ticklepoke/pathfinding.git
+      - run: git config user.name "ticklepoke"
+      - run: git config user.email "lee.nigel@hotmail.com"
       - name: Install dependencies
         run: yarn install
       - name: Deploy
