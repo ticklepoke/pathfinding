@@ -3,11 +3,25 @@ import {
 	NodeExpandOutlined,
 	StopOutlined,
 } from "@ant-design/icons";
-import { Button, Form, InputNumber, Select, Tooltip, Typography } from "antd";
+import {
+	Button,
+	Form,
+	InputNumber,
+	Select,
+	Spin,
+	Tooltip,
+	Typography,
+} from "antd";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getGridRowsCols, gridActionCreators } from "store/Grid";
+import {
+	getJobError,
+	getJobStatus,
+	jobActionCreators,
+	JobStatus,
+} from "store/Job";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -21,9 +35,11 @@ export enum DrawTools {
 
 export default function Menu() {
 	const [drawTool, setDrawTool] = useState<DrawTools | null>();
-
-	const { rows, cols } = useSelector(getGridRowsCols);
 	const dispatch = useDispatch();
+	const { rows, cols } = useSelector(getGridRowsCols);
+	const jobState = useSelector(getJobStatus);
+	const jobError = useSelector(getJobError);
+
 	const handleDrawToolClick = (tool: DrawTools) => {
 		if (drawTool === tool) {
 			setDrawTool(null);
@@ -31,6 +47,7 @@ export default function Menu() {
 			setDrawTool(tool);
 		}
 	};
+
 	return (
 		<div className="vh-100 w-300px p-10 border-right-gray">
 			<Title level={3}>Pathfinding</Title>
@@ -91,9 +108,15 @@ export default function Menu() {
 					/>
 				</Tooltip>
 			</Form>
-			<Button className="w-100p" type="primary">
-				Start Pathfinding
+			<Button
+				className="w-100p"
+				type="primary"
+				onClick={() => dispatch(jobActionCreators.START_JOB())}
+				disabled={jobState !== JobStatus.Idle}
+			>
+				{jobState === JobStatus.Idle ? "Start Pathfinding" : <Spin />}
 			</Button>
+			{jobError && <Text type="danger">An error occured: {jobError}</Text>}
 		</div>
 	);
 }
