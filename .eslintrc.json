@@ -43,7 +43,8 @@
 			{
 				"code": 80,
 				"tabWidth": 2,
-				"comments": 80
+				"comments": 80,
+				"ignorePattern": "^import"
 			}
 		]
 	}
