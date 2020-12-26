@@ -1,16 +1,20 @@
 import { Col, Row } from "antd";
 import { chunk, range } from "lodash";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { SubSink } from "subsink";
 
 import { mouseClick$ } from "interactions";
 import AdjacencyList from "service/AdjacencyList";
 import { findPath$ } from "service/store";
+import { getGridRowsCols } from "store/Grid";
 
 import GridItem from "./GridItem";
 
 export default function NumberGrid() {
 	const [startingNode, setStartingNode] = useState<string>("1");
+
+	const { rows: numRows, cols: numCols } = useSelector(getGridRowsCols);
 
 	useEffect(() => {
 		const subSink = new SubSink();
@@ -24,15 +28,15 @@ export default function NumberGrid() {
 		};
 	}, []);
 
-	const adjList = AdjacencyList(10, 10);
+	const adjList = AdjacencyList(numRows, numCols);
 	const path$ = findPath$(adjList, parseInt(startingNode));
 
 	if (!path$) {
 		return null;
 	}
 
-	const grid = range(0, 100, 1);
-	const rows = chunk(grid, 10);
+	const grid = range(0, numRows * numCols, 1);
+	const rows = chunk(grid, numCols);
 
 	return (
 		<div className="number-grid-container d-flex justify-center align-center">
