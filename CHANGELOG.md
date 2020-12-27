@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.29](https://github.com/ticklepoke/pathfinding/compare/v0.1.28...v0.1.29) (2020-12-27)
+
+
+### Features
+
+* **src:** Add ability to reset grid ([724e86e](https://github.com/ticklepoke/pathfinding/commit/724e86e5606fc99df965b45f4f94d1c660037386))
+
 ### [0.1.28](https://github.com/ticklepoke/pathfinding/compare/v0.1.27...v0.1.28) (2020-12-27)
 
 
