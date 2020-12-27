@@ -9,7 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./index.css";
 
-const store = initStore();
+export const store = initStore();
 
 ReactDOM.render(
 	<Provider store={store}>

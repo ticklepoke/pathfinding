@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 
+import { algorithmReducer } from "store/Algorithm";
 import { gridReducer } from "store/Grid/Grid";
 import { jobReducer } from "store/Job/Job";
 
@@ -11,6 +12,7 @@ const createRootReducer = () =>
 		obstacles: obstaclesReducer,
 		grid: gridReducer,
 		job: jobReducer,
+		algorithm: algorithmReducer,
 	});
 
 export default createRootReducer;

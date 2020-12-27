@@ -1,3 +1,4 @@
+import { AlgorithmState } from "store/Algorithm";
 import { GridState } from "store/Grid/types";
 import { JobState } from "store/Job/types";
 
@@ -7,4 +8,5 @@ export interface State {
 	obstacles: ObstaclesState;
 	grid: GridState;
 	job: JobState;
+	algorithm: AlgorithmState;
 }
