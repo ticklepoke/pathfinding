@@ -34,7 +34,7 @@ export default function NumberGrid() {
 	// 	};
 	// }, []);
 
-	if (jobState === JobStatus.Running) {
+	if (jobState === JobStatus.Running || jobState === JobStatus.Finished) {
 		const adjList = AdjacencyList(numRows, numCols);
 		path$ = findPath$(adjList, parseInt(startingNode));
 	}

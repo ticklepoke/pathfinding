@@ -1,6 +1,9 @@
 import {
+	DisconnectOutlined,
 	NodeCollapseOutlined,
 	NodeExpandOutlined,
+	PlayCircleOutlined,
+	RedoOutlined,
 	StopOutlined,
 } from "@ant-design/icons";
 import {
@@ -70,12 +73,60 @@ export default function Menu() {
 		dispatch(jobActionCreators.START_JOB());
 	}, [dispatch]);
 
+	const dispatchClearJob = useCallback(() => {
+		dispatch(jobActionCreators.CLEAR_JOB());
+	}, [dispatch]);
+
 	const dispatchSelectAlgo = useCallback(
 		(algo: Algorithms) => {
 			dispatch(algorithmActionCreators.SET_ALGORITHM(algo));
 		},
 		[dispatch]
 	);
+
+	const renderButton = useCallback(() => {
+		if (jobState === JobStatus.Finished) {
+			return (
+				<Button
+					className="w-100p"
+					type="primary"
+					onClick={dispatchClearJob}
+					icon={<RedoOutlined />}
+				>
+					Clear Path
+				</Button>
+			);
+		}
+		if (jobState === JobStatus.Running) {
+			return (
+				<Button className="w-100p" type="primary" disabled>
+					<Spin />
+				</Button>
+			);
+		}
+
+		if (jobState === JobStatus.Error) {
+			<Button
+				className="w-100p"
+				type="primary"
+				disabled
+				icon={<DisconnectOutlined />}
+			>
+				Something went wrong
+			</Button>;
+		}
+
+		return (
+			<Button
+				className="w-100p"
+				type="primary"
+				onClick={dispatchStartJob}
+				icon={<PlayCircleOutlined />}
+			>
+				Start Pathfinding
+			</Button>
+		);
+	}, [jobState]);
 
 	return (
 		<div className="vh-100 w-300px p-10 border-right-gray">
@@ -138,14 +189,7 @@ export default function Menu() {
 					/>
 				</Tooltip>
 			</Form>
-			<Button
-				className="w-100p"
-				type="primary"
-				onClick={dispatchStartJob}
-				disabled={jobState !== JobStatus.Idle}
-			>
-				{jobState === JobStatus.Idle ? "Start Pathfinding" : <Spin />}
-			</Button>
+			{renderButton()}
 			{jobError && <Text type="danger">An error occured: {jobError}</Text>}
 		</div>
 	);

@@ -17,7 +17,7 @@ export default function GridItem({ uuid, start, path$ }: GridItemProps) {
 	const dispatch = useDispatch();
 
 	const completeJob = useCallback(() => {
-		dispatch(jobActionCreators.STOP_JOB());
+		dispatch(jobActionCreators.FINISH_JOB());
 	}, [dispatch]);
 
 	useEffect(() => {
@@ -32,6 +32,8 @@ export default function GridItem({ uuid, start, path$ }: GridItemProps) {
 				null,
 				completeJob
 			);
+		} else {
+			setFound(false);
 		}
 		return () => subSink.unsubscribe();
 	});
