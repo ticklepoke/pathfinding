@@ -1,6 +1,7 @@
 export enum JobStatus {
 	Running,
-	Idle,
+	Idle, // Grid is empty
+	Finished, // Grid is fully colored
 	Error,
 }
 
