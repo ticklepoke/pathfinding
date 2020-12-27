@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.27](https://github.com/ticklepoke/pathfinding/compare/v0.1.26...v0.1.27) (2020-12-27)
+
+
+### Features
+
+* **src:** Add ability to start job ([7504a3c](https://github.com/ticklepoke/pathfinding/commit/7504a3c18de86cbde98079b18ac0fd80988ab7f7))
+* **store:** Add job to redux ([2671a0e](https://github.com/ticklepoke/pathfinding/commit/2671a0e97ccf0f65649b0b0992d2aff9d23414c5))
+
+
+### Bug Fixes
+
+* **src:** Remove unused ([1ff5c42](https://github.com/ticklepoke/pathfinding/commit/1ff5c426e269415fedd1f54c6b5ba89b9f824422))
+
+
+### Code Refactoring
+
+* **dispatch:** Refactor dispatch to useCallback ([8a5dddd](https://github.com/ticklepoke/pathfinding/commit/8a5dddde2dc2c0bf2e5350b5b7c297aa6904e012))
+
 ### [0.1.26](https://github.com/ticklepoke/pathfinding/compare/v0.1.25...v0.1.26) (2020-12-26)
 
 
