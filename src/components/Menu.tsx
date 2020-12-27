@@ -15,6 +15,7 @@ import {
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { Algorithms, getAlgorithmSelector } from "store/Algorithm";
 import { getGridRowsCols, gridActionCreators } from "store/Grid";
 import {
 	getJobError,
@@ -22,6 +23,8 @@ import {
 	jobActionCreators,
 	JobStatus,
 } from "store/Job";
+
+import { algorithmActionCreators } from "../store/Algorithm";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -39,6 +42,7 @@ export default function Menu() {
 	const { rows, cols } = useSelector(getGridRowsCols);
 	const jobState = useSelector(getJobStatus);
 	const jobError = useSelector(getJobError);
+	const selectedAlgo = useSelector(getAlgorithmSelector);
 
 	const handleDrawToolClick = (tool: DrawTools) => {
 		if (drawTool === tool) {
@@ -65,6 +69,13 @@ export default function Menu() {
 	const dispatchStartJob = useCallback(() => {
 		dispatch(jobActionCreators.START_JOB());
 	}, [dispatch]);
+
+	const dispatchSelectAlgo = useCallback(
+		(algo: Algorithms) => {
+			dispatch(algorithmActionCreators.SET_ALGORITHM(algo));
+		},
+		[dispatch]
+	);
 
 	return (
 		<div className="vh-100 w-300px p-10 border-right-gray">
@@ -97,9 +108,16 @@ export default function Menu() {
 				</Tooltip>
 			</div>
 			<Text strong>Algorithm</Text>
-			<Select className="w-100p mt-10 mb-20" placeholder="Select Algorithm">
-				<Option value="1">Breadth First Search</Option>
-				<Option value="2">Depth First Search</Option>
+			<Select
+				className="w-100p mt-10 mb-20"
+				placeholder="Select Algorithm"
+				value={selectedAlgo}
+				onChange={dispatchSelectAlgo}
+			>
+				<Option value={Algorithms.BreadthFirstSearch}>
+					Breadth First Search
+				</Option>
+				<Option value={Algorithms.DepthFirstSearch}>Depth First Search</Option>
 			</Select>
 			<Text strong>Grid Size</Text>
 			<Form className="mt-10 mb-20">
