@@ -12,7 +12,7 @@ import { getJobStatus, JobStatus } from "store/Job";
 import GridItem from "./GridItem";
 
 export default function NumberGrid() {
-	const [startingNode, setStartingNode] = useState<string>("1");
+	const [startingNode] = useState<string>("1");
 
 	const { rows: numRows, cols: numCols } = useSelector(getGridRowsCols);
 	const jobState = useSelector(getJobStatus);
@@ -22,7 +22,7 @@ export default function NumberGrid() {
 
 	// useEffect(() => {
 	// 	const subSink = new SubSink();
-	// 	// TODO: refactor this into a pure js file, use store.dispatch() to set the
+	// TODO: refactor this into a pure js file, use store.dispatch() to set the
 	// 	// starting node
 	// 	subSink.sink = mouseClick$.subscribe(({ target }) => {
 	// 		// TODO: combine with key down
