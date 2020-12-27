@@ -12,7 +12,7 @@ import {
 	Tooltip,
 	Typography,
 } from "antd";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getGridRowsCols, gridActionCreators } from "store/Grid";
@@ -47,6 +47,24 @@ export default function Menu() {
 			setDrawTool(tool);
 		}
 	};
+
+	const dispatchSetCol = useCallback(
+		(val: number) => {
+			dispatch(gridActionCreators.SET_COL(val));
+		},
+		[dispatch]
+	);
+
+	const dispatchSetRow = useCallback(
+		(val: number) => {
+			dispatch(gridActionCreators.SET_ROW(val));
+		},
+		[dispatch]
+	);
+
+	const dispatchStartJob = useCallback(() => {
+		dispatch(jobActionCreators.START_JOB());
+	}, [dispatch]);
 
 	return (
 		<div className="vh-100 w-300px p-10 border-right-gray">
@@ -90,10 +108,7 @@ export default function Menu() {
 						min={1}
 						max={50}
 						value={cols}
-						onChange={(val) =>
-							typeof val === "number" &&
-							dispatch(gridActionCreators.SET_COL(val))
-						}
+						onChange={(val) => typeof val === "number" && dispatchSetCol(val)}
 					/>
 				</Tooltip>
 				<Tooltip title="Height" placement="bottomRight">
@@ -101,17 +116,14 @@ export default function Menu() {
 						min={1}
 						max={50}
 						value={rows}
-						onChange={(val) =>
-							typeof val === "number" &&
-							dispatch(gridActionCreators.SET_ROW(val))
-						}
+						onChange={(val) => typeof val === "number" && dispatchSetRow(val)}
 					/>
 				</Tooltip>
 			</Form>
 			<Button
 				className="w-100p"
 				type="primary"
-				onClick={() => dispatch(jobActionCreators.START_JOB())}
+				onClick={dispatchStartJob}
 				disabled={jobState !== JobStatus.Idle}
 			>
 				{jobState === JobStatus.Idle ? "Start Pathfinding" : <Spin />}
