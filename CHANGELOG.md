@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.28](https://github.com/ticklepoke/pathfinding/compare/v0.1.27...v0.1.28) (2020-12-27)
+
+
+### Features
+
+* **DFS:** Add dfs algo ([076e365](https://github.com/ticklepoke/pathfinding/commit/076e3654c986ac3fa3f53f4ec1e5a2810ea88331))
+* **src:** Ability to select algo ([6f19905](https://github.com/ticklepoke/pathfinding/commit/6f1990524682fe639c10928be85d236e4875069a))
+* **store:** Add selected algo to store ([81d6367](https://github.com/ticklepoke/pathfinding/commit/81d63679d542ed6bad5f9179beb6d66265d5ac90))
+
 ### [0.1.27](https://github.com/ticklepoke/pathfinding/compare/v0.1.26...v0.1.27) (2020-12-27)
 
 
