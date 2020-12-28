@@ -9,7 +9,6 @@ import AdjacencyList from "service/AdjacencyList";
 import { findPath$ } from "service/store";
 import { getGridRowsCols } from "store/Grid";
 import { getJobStatus, JobStatus } from "store/Job";
-import { DrawTools, getActivatedTool } from "store/Tools";
 
 import GridItem from "./GridItem";
 
@@ -18,7 +17,6 @@ export default function NumberGrid() {
 
 	const { rows: numRows, cols: numCols } = useSelector(getGridRowsCols);
 	const jobState = useSelector(getJobStatus);
-	const selectedTool = useSelector(getActivatedTool);
 	let path$: Observable<number> | undefined;
 
 	// let path$: Observable<number> | undefined;
@@ -49,17 +47,7 @@ export default function NumberGrid() {
 	const grid = range(0, numRows * numCols, 1);
 	const rows = chunk(grid, numCols);
 	return (
-		<div
-			className={classnames(
-				"number-grid-container",
-				"d-flex",
-				"justify-center",
-				"align-center",
-				{
-					"cursor-cell": selectedTool !== DrawTools.NoTool,
-				}
-			)}
-		>
+		<div className="number-grid-container d-flex justify-center align-center">
 			<div className="overflow-auto">
 				{rows.map((cols, i) => (
 					<Row gutter={0} key={i} wrap={false}>

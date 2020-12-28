@@ -1,10 +1,11 @@
 import classnames from "classnames";
 import React, { useCallback, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Observable } from "rxjs";
 import { SubSink } from "subsink";
 
 import { jobActionCreators } from "store/Job";
+import { DrawTools, getActivatedTool } from "store/Tools";
 
 interface GridItemProps {
 	uuid: number;
@@ -15,6 +16,7 @@ interface GridItemProps {
 export default function GridItem({ uuid, start, path$ }: GridItemProps) {
 	const [found, setFound] = useState(false);
 	const dispatch = useDispatch();
+	const selectedTool = useSelector(getActivatedTool);
 
 	const completeJob = useCallback(() => {
 		dispatch(jobActionCreators.FINISH_JOB());
@@ -43,7 +45,10 @@ export default function GridItem({ uuid, start, path$ }: GridItemProps) {
 			className={classnames(
 				"grid-item",
 				{ "grid-item-start": start === uuid },
-				{ "grid-item-found": found }
+				{ "grid-item-found": found },
+				{
+					"cursor-cell": selectedTool !== DrawTools.NoTool,
+				}
 			)}
 			id={uuid.toString()}
 		>
