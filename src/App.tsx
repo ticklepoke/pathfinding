@@ -1,5 +1,6 @@
 import React from "react";
 
+import KeyboardShortcuts from "components/KeyboardShortcuts";
 import Menu from "components/Menu";
 import NumberGrid from "components/NumberGrid";
 
@@ -10,6 +11,7 @@ export function App() {
 		<div>
 			<Menu />
 			<NumberGrid />
+			<KeyboardShortcuts />
 		</div>
 	);
 }
