@@ -1,4 +1,5 @@
 import {
+	DeleteOutlined,
 	DisconnectOutlined,
 	NodeCollapseOutlined,
 	NodeExpandOutlined,
@@ -15,7 +16,7 @@ import {
 	Tooltip,
 	Typography,
 } from "antd";
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Algorithms, getAlgorithmSelector } from "store/Algorithm";
@@ -26,34 +27,20 @@ import {
 	jobActionCreators,
 	JobStatus,
 } from "store/Job";
+import { DrawTools, getActivatedTool, toolsActionCreators } from "store/Tools";
 
 import { algorithmActionCreators } from "../store/Algorithm";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
 
-// TODO: refactor to tools store
-export enum DrawTools {
-	DrawObstacle,
-	DrawEndNode,
-	DrawStartNode,
-}
-
 export default function Menu() {
-	const [drawTool, setDrawTool] = useState<DrawTools | null>();
 	const dispatch = useDispatch();
 	const { rows, cols } = useSelector(getGridRowsCols);
 	const jobState = useSelector(getJobStatus);
 	const jobError = useSelector(getJobError);
 	const selectedAlgo = useSelector(getAlgorithmSelector);
-
-	const handleDrawToolClick = (tool: DrawTools) => {
-		if (drawTool === tool) {
-			setDrawTool(null);
-		} else {
-			setDrawTool(tool);
-		}
-	};
+	const activatedTool = useSelector(getActivatedTool);
 
 	const dispatchSetCol = useCallback(
 		(val: number) => {
@@ -82,6 +69,17 @@ export default function Menu() {
 			dispatch(algorithmActionCreators.SET_ALGORITHM(algo));
 		},
 		[dispatch]
+	);
+
+	const dispatchSelectTool = useCallback(
+		(selectedTool: DrawTools) => {
+			if (selectedTool === activatedTool) {
+				dispatch(toolsActionCreators.CLEAR_TOOL());
+			} else {
+				dispatch(toolsActionCreators.SELECT_TOOL(selectedTool));
+			}
+		},
+		[dispatch, activatedTool]
 	);
 
 	const renderButton = useCallback(() => {
@@ -135,26 +133,39 @@ export default function Menu() {
 			<div className="w-100p d-flex justify-start mt-10 mb-20">
 				<Tooltip title="Draw Starting Node" placement="bottomRight">
 					<Button
-						type={drawTool === DrawTools.DrawStartNode ? "primary" : "default"}
-						onClick={() => handleDrawToolClick(DrawTools.DrawStartNode)}
+						type={activatedTool === DrawTools.DrawStart ? "primary" : "default"}
+						onClick={() => dispatchSelectTool(DrawTools.DrawStart)}
 					>
 						<NodeExpandOutlined />
 					</Button>
 				</Tooltip>
 				<Tooltip title="Draw Ending Node" placement="bottomRight">
 					<Button
-						type={drawTool === DrawTools.DrawEndNode ? "primary" : "default"}
-						onClick={() => handleDrawToolClick(DrawTools.DrawEndNode)}
+						type={activatedTool === DrawTools.DrawEnd ? "primary" : "default"}
+						onClick={() => dispatchSelectTool(DrawTools.DrawEnd)}
 					>
 						<NodeCollapseOutlined />
 					</Button>
 				</Tooltip>
 				<Tooltip title="Draw Obstacles" placement="bottomRight">
 					<Button
-						type={drawTool === DrawTools.DrawObstacle ? "primary" : "default"}
-						onClick={() => handleDrawToolClick(DrawTools.DrawObstacle)}
+						type={
+							activatedTool === DrawTools.DrawObstacle ? "primary" : "default"
+						}
+						onClick={() => dispatchSelectTool(DrawTools.DrawObstacle)}
 					>
 						<StopOutlined />
+					</Button>
+				</Tooltip>
+				<Tooltip title="Clear Node" placement="bottomRight">
+					<Button
+						danger
+						type={
+							activatedTool === DrawTools.DeleteItem ? "primary" : "default"
+						}
+						onClick={() => dispatchSelectTool(DrawTools.DeleteItem)}
+					>
+						<DeleteOutlined />
 					</Button>
 				</Tooltip>
 			</div>
