@@ -135,6 +135,7 @@ export default function Menu() {
 					<Button
 						type={activatedTool === DrawTools.DrawStart ? "primary" : "default"}
 						onClick={() => dispatchSelectTool(DrawTools.DrawStart)}
+						disabled={jobState === JobStatus.Running}
 					>
 						<NodeExpandOutlined />
 					</Button>
@@ -143,6 +144,7 @@ export default function Menu() {
 					<Button
 						type={activatedTool === DrawTools.DrawEnd ? "primary" : "default"}
 						onClick={() => dispatchSelectTool(DrawTools.DrawEnd)}
+						disabled={jobState === JobStatus.Running}
 					>
 						<NodeCollapseOutlined />
 					</Button>
@@ -153,6 +155,7 @@ export default function Menu() {
 							activatedTool === DrawTools.DrawObstacle ? "primary" : "default"
 						}
 						onClick={() => dispatchSelectTool(DrawTools.DrawObstacle)}
+						disabled={jobState === JobStatus.Running}
 					>
 						<StopOutlined />
 					</Button>
@@ -164,6 +167,7 @@ export default function Menu() {
 							activatedTool === DrawTools.DeleteItem ? "primary" : "default"
 						}
 						onClick={() => dispatchSelectTool(DrawTools.DeleteItem)}
+						disabled={jobState === JobStatus.Running}
 					>
 						<DeleteOutlined />
 					</Button>
