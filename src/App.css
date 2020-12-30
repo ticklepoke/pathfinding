@@ -75,6 +75,10 @@
 	background-color: yellow;
 }
 
+.grid-item-end {
+	background-color: blue;
+}
+
 .number-grid-container {
 	position: absolute;
 	left: 300px;
