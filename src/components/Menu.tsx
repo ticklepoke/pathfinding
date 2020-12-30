@@ -19,7 +19,11 @@ import {
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Algorithms, getAlgorithmSelector } from "store/Algorithm";
+import {
+	algorithmActionCreators,
+	Algorithms,
+	getAlgorithmSelector,
+} from "store/Algorithm";
 import { getGridRowsCols, gridActionCreators } from "store/Grid";
 import {
 	getJobError,
@@ -28,8 +32,6 @@ import {
 	JobStatus,
 } from "store/Job";
 import { DrawTools, getActivatedTool, toolsActionCreators } from "store/Tools";
-
-import { algorithmActionCreators } from "../store/Algorithm";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
