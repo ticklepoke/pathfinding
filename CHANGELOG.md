@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.31](https://github.com/ticklepoke/pathfinding/compare/v0.1.30...v0.1.31) (2020-12-30)
+
+
+### Code Refactoring
+
+* **imports :** Refactor imports ([9fbf9c1](https://github.com/ticklepoke/pathfinding/commit/9fbf9c1a81a6894281639449469cbb07d488a5a3))
+* **interfaces:** Refactor all interface to have I prefix ([1a7b818](https://github.com/ticklepoke/pathfinding/commit/1a7b818c887e17ddd0111767b9de37f5101a6cfc))
+
 ### [0.1.30](https://github.com/ticklepoke/pathfinding/compare/v0.1.29...v0.1.30) (2020-12-30)
 
 
