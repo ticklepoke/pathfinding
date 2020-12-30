@@ -1,6 +1,7 @@
 import { store } from "index";
 import { Store } from "redux";
-import { fromEvent, Subject } from "rxjs";
+import { fromEvent, Observable } from "rxjs";
+import { filter, map } from "rxjs/operators";
 
 import { JobStatus } from "store/Job";
 import { DrawTools, toolsActionCreators } from "store/Tools";
@@ -19,12 +20,36 @@ function determineDispatchAction(
 	}
 }
 
+function isClickedGrid(e: KeyboardEvent) {
+	if (!e.target) {
+		return false;
+	}
+	const targetElement = e.target as HTMLElement;
+	if (!targetElement.id || !targetElement.id.includes("grid-item-")) {
+		return false;
+	}
+	return true;
+}
+
 export interface INodeClicked {
-	operation: Exclude<DrawTools, DrawTools.NoTool>;
 	nodeId: string;
 }
 
-export const nodeClicked$: Subject<INodeClicked> = new Subject();
+export const nodeClicked$: Observable<INodeClicked> = fromEvent<KeyboardEvent>(
+	document,
+	"mousedown"
+).pipe(
+	filter(isClickedGrid),
+	map(({ target }) => {
+		const targetElement = target as HTMLElement;
+		const id = targetElement.id.replace("grid-item-", "");
+		// TODO: check for nearby id, make sure its a grid element,
+		// return appropriate tool
+		return {
+			nodeId: id,
+		};
+	})
+);
 
 export function initKeyPressListener() {
 	const keyDown$ = fromEvent<KeyboardEvent>(document, "keydown");
