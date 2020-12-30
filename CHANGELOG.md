@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.32](https://github.com/ticklepoke/pathfinding/compare/v0.1.31...v0.1.32) (2020-12-30)
+
+
+### Features
+
+* **esc:** Add ability to cancel tool using escape ([fbff098](https://github.com/ticklepoke/pathfinding/commit/fbff09874f71c584a10a133ba33294b3f9b97de5))
+
+
+### Bug Fixes
+
+* **imports:** Remove redundant imports ([11d1a96](https://github.com/ticklepoke/pathfinding/commit/11d1a96cf4d87e5c8a2b36971fba90a149879519))
+
 ### [0.1.31](https://github.com/ticklepoke/pathfinding/compare/v0.1.30...v0.1.31) (2020-12-30)
 
 
