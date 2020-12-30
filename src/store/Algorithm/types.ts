@@ -3,6 +3,6 @@ export enum Algorithms {
 	DepthFirstSearch = "depthFirstSearch",
 }
 
-export interface AlgorithmState {
+export interface IAlgorithmState {
 	algorithm: Algorithms;
 }

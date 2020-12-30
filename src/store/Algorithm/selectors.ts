@@ -1,6 +1,6 @@
-import { State } from "store/state";
+import { IState } from "store/state";
 
-const getAlgorithmState = (state: State) => state.algorithm;
+const getAlgorithmState = (state: IState) => state.algorithm;
 
-export const getAlgorithmSelector = (state: State) =>
+export const getAlgorithmSelector = (state: IState) =>
 	getAlgorithmState(state).algorithm;

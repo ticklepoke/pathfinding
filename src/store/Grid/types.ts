@@ -1,4 +1,4 @@
-export interface GridState {
+export interface IGridState {
 	rows: number;
 	cols: number;
 }

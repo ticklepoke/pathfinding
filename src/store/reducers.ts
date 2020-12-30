@@ -6,10 +6,10 @@ import { jobReducer } from "store/Job/Job";
 import { toolsReducer } from "store/Tools";
 
 import { obstaclesReducer } from "./Obstacles";
-import { State } from "./state";
+import { IState } from "./state";
 
 const createRootReducer = () =>
-	combineReducers<State>({
+	combineReducers<IState>({
 		obstacles: obstaclesReducer,
 		grid: gridReducer,
 		job: jobReducer,

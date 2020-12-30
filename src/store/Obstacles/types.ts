@@ -1,5 +1,5 @@
-import { GridItem } from "types/Node";
+import { IGridItem } from "types/Node";
 
-export interface ObstaclesState {
-	obstacles: GridItem[];
+export interface IObstaclesState {
+	obstacles: IGridItem[];
 }
