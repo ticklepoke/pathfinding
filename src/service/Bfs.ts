@@ -2,11 +2,11 @@ import { IAdjacencyList } from "service/AdjacencyList";
 
 export default function Bfs(
 	adjList: IAdjacencyList,
-	start: number,
-	target?: number
+	start: string,
+	target?: string
 ) {
-	const queue: number[] = [];
-	const found: Set<number> = new Set();
+	const queue: string[] = [];
+	const found: Set<string> = new Set();
 
 	if (!adjList[start] || adjList[start].length === 0) {
 		return null;

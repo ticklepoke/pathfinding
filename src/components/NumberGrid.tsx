@@ -1,42 +1,47 @@
 import { Col, Row } from "antd";
 import { chunk, range } from "lodash";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Observable } from "rxjs";
+import { SubSink } from "subsink";
 
+import { nodeClicked$ } from "interactions";
 import AdjacencyList from "service/AdjacencyList";
 import { findPath$ } from "service/store";
 import { getGridRowsCols } from "store/Grid";
 import { getJobStatus, JobStatus } from "store/Job";
+import { DrawTools, getActivatedTool } from "store/Tools";
 
 import GridItem from "./GridItem";
 
 export default function NumberGrid() {
-	const [startingNode] = useState<string>("1");
+	const [startingNode, setStartingNode] = useState<string>("0");
+	const [endNode, setEndNode] = useState<string | undefined>();
 
 	const { rows: numRows, cols: numCols } = useSelector(getGridRowsCols);
 	const jobState = useSelector(getJobStatus);
-	let path$: Observable<number> | undefined;
+	const selectedDrawTool = useSelector(getActivatedTool);
+	let path$: Observable<string> | undefined;
 
-	// let path$: Observable<number> | undefined;
-
-	// useEffect(() => {
-	// 	const subSink = new SubSink();
-	// TODO: refactor this into a pure js file, use store.dispatch() to set the
-	// 	// starting node
-	// 	subSink.sink = mouseClick$.subscribe(({ target }) => {
-	// 		// TODO: combine with key down
-	// 		const targetElement = target as HTMLElement;
-	// 		setStartingNode(targetElement.id);
-	// 	});
-	// 	return () => {
-	// 		subSink.unsubscribe();
-	// 	};
-	// }, []);
+	useEffect(() => {
+		const subSink = new SubSink();
+		// TODO: refactor this into a pure js file, use store.dispatch() to set the
+		// starting node
+		subSink.sink = nodeClicked$.subscribe((e) => {
+			if (selectedDrawTool === DrawTools.DrawStart) {
+				setStartingNode(e.nodeId);
+			} else if (selectedDrawTool === DrawTools.DrawEnd) {
+				setEndNode(e.nodeId);
+			}
+		});
+		return () => {
+			subSink.unsubscribe();
+		};
+	}, [selectedDrawTool, nodeClicked$]);
 
 	if (jobState === JobStatus.Running || jobState === JobStatus.Finished) {
 		const adjList = AdjacencyList(numRows, numCols);
-		path$ = findPath$(adjList, parseInt(startingNode));
+		path$ = findPath$(adjList, startingNode, endNode);
 	}
 
 	// if (!path$ || jobState !== JobStatus.Running) {
@@ -45,7 +50,6 @@ export default function NumberGrid() {
 
 	const grid = range(0, numRows * numCols, 1);
 	const rows = chunk(grid, numCols);
-
 	return (
 		<div className="number-grid-container d-flex justify-center align-center">
 			<div className="overflow-auto">
@@ -54,8 +58,9 @@ export default function NumberGrid() {
 						{cols.map((col, j) => (
 							<Col key={j}>
 								<GridItem
-									uuid={col}
-									start={parseInt(startingNode)}
+									uuid={col.toString()}
+									start={startingNode}
+									end={endNode}
 									path$={path$}
 								/>
 							</Col>

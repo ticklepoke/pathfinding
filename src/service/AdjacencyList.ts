@@ -1,7 +1,7 @@
-import { chunk, range } from "lodash";
+import { chunk, map, range } from "lodash";
 
 export interface IAdjacencyList {
-	[key: number]: number[];
+	[key: string]: string[];
 }
 
 export default function AdjacencyList(rows: number, cols: number) {
@@ -16,12 +16,13 @@ export default function AdjacencyList(rows: number, cols: number) {
 		[1, -1],
 	];
 
-	const grid = chunk(range(0, rows * cols, 1), cols);
+	const temp = chunk(range(0, rows * cols, 1), cols);
+	const grid = map(temp, (row) => row.map((entry) => entry.toString()));
 
 	const adjList: IAdjacencyList = {};
 	grid.forEach((row, i) => {
 		row.forEach((entry, j) => {
-			const curr: number[] = [];
+			const curr: string[] = [];
 			DIRECTIONS.forEach((dir) => {
 				const nextRow = i + dir[0];
 				const nextCol = j + dir[1];

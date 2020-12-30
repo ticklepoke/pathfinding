@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
+import { initKeyPressListener } from "interactions";
 import { initStore } from "store/store";
 
 import App from "./App";
@@ -10,6 +11,7 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
 export const store = initStore();
+initKeyPressListener();
 
 ReactDOM.render(
 	<Provider store={store}>

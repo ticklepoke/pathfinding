@@ -50,6 +50,10 @@
 	border-right: 1px solid lightgray;
 }
 
+.cursor-cell {
+	cursor: cell;
+}
+
 /* Custom component related classnames */
 
 .grid {
@@ -71,10 +75,20 @@
 	background-color: yellow;
 }
 
+.grid-item-end {
+	background-color: blue;
+}
+
 .number-grid-container {
 	position: absolute;
 	left: 300px;
 	top: 0px;
 	width: calc(100vw - 300px);
 	height: 100%;
+}
+
+.keyboard-shortcuts-button {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
 }
