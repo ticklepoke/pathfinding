@@ -3,11 +3,11 @@ import * as _ from "lodash";
 import actionCreatorFactory from "typescript-fsa";
 import { reducerWithInitialState as makeReducer } from "typescript-fsa-reducers";
 
-import { ObstaclesState } from "./types";
+import { IObstaclesState } from "./types";
 
 const actionCreator = actionCreatorFactory("OBSTACLES");
 
-const INITIAL_STATE: ObstaclesState = {
+const INITIAL_STATE: IObstaclesState = {
 	obstacles: [],
 };
 
@@ -20,7 +20,7 @@ export const obstaclesActionCreators = {
 export const obstaclesReducer = makeReducer(INITIAL_STATE)
 	.case(
 		obstaclesActionCreators.ADD_GRID_ITEM,
-		(state: ObstaclesState, uuid: string) => {
+		(state: IObstaclesState, uuid: string) => {
 			const obstacles = _.cloneDeep(state.obstacles);
 			if (!_.some(obstacles, { uuid })) {
 				obstacles.push({ uuid });
@@ -33,7 +33,7 @@ export const obstaclesReducer = makeReducer(INITIAL_STATE)
 	)
 	.case(
 		obstaclesActionCreators.REMOVE_GRID_ITEM,
-		(state: ObstaclesState, uuid: string) => ({
+		(state: IObstaclesState, uuid: string) => ({
 			...state,
 			obstacles: _.remove(
 				state.obstacles,
@@ -43,5 +43,5 @@ export const obstaclesReducer = makeReducer(INITIAL_STATE)
 	)
 	.case(
 		obstaclesActionCreators.CLEAR_OBSTACLE,
-		(state: ObstaclesState) => state
+		(state: IObstaclesState) => state
 	);

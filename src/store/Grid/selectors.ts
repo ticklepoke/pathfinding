@@ -1,8 +1,8 @@
-import { State } from "store/state";
+import { IState } from "store/state";
 
-const getGridState = (state: State) => state.grid;
+const getGridState = (state: IState) => state.grid;
 
-export const getGridRowsCols = (state: State) => ({
+export const getGridRowsCols = (state: IState) => ({
 	rows: getGridState(state).rows,
 	cols: getGridState(state).cols,
 });

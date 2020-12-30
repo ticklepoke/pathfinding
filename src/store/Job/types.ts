@@ -5,7 +5,7 @@ export enum JobStatus {
 	Error,
 }
 
-export interface JobState {
+export interface IJobState {
 	status: JobStatus;
 	errorMessage?: string;
 }

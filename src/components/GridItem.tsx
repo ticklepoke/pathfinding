@@ -7,14 +7,14 @@ import { SubSink } from "subsink";
 import { jobActionCreators } from "store/Job";
 import { DrawTools, getActivatedTool } from "store/Tools";
 
-interface GridItemProps {
+interface IGridItemProps {
 	uuid: string;
 	start: string;
 	end?: string;
 	path$?: Observable<string>;
 }
 
-export default function GridItem({ uuid, start, end, path$ }: GridItemProps) {
+export default function GridItem({ uuid, start, end, path$ }: IGridItemProps) {
 	const [found, setFound] = useState(false);
 	const dispatch = useDispatch();
 	const selectedTool = useSelector(getActivatedTool);

@@ -1,3 +1,3 @@
-export interface GridItem {
-  uuid: string;
+export interface IGridItem {
+	uuid: string;
 }

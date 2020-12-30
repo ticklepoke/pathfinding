@@ -1,5 +1,5 @@
-import { State } from "store/state";
+import { IState } from "store/state";
 
-const getObstaclesState = (state: State) => state.obstacles;
+const getObstaclesState = (state: IState) => state.obstacles;
 
 export const getObstacles = getObstaclesState;

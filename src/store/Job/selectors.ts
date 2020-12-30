@@ -1,7 +1,7 @@
-import { State } from "store/state";
+import { IState } from "store/state";
 
-const getJobState = (state: State) => state.job;
+const getJobState = (state: IState) => state.job;
 
-export const getJobStatus = (state: State) => getJobState(state).status;
+export const getJobStatus = (state: IState) => getJobState(state).status;
 
-export const getJobError = (state: State) => getJobState(state).errorMessage;
+export const getJobError = (state: IState) => getJobState(state).errorMessage;
