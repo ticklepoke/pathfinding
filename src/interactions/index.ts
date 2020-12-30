@@ -73,7 +73,9 @@ export function initKeyPressListener() {
 			case "o":
 				determineDispatchAction(DrawTools.DrawObstacle, currentTool, store);
 				break;
-
+			case "Escape":
+				store.dispatch(toolsActionCreators.CLEAR_TOOL());
+				break;
 			default:
 				break;
 		}
