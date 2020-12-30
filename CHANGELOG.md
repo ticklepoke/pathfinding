@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.30](https://github.com/ticklepoke/pathfinding/compare/v0.1.29...v0.1.30) (2020-12-30)
+
+
+### Features
+
+* **End node:** Add end node color ([7635b7f](https://github.com/ticklepoke/pathfinding/commit/7635b7f413f969d2ae3cd217939c43e564026edf))
+* **Keyboard:** Add keyboard interaction ([1320463](https://github.com/ticklepoke/pathfinding/commit/1320463333e8c9f0423c3c0a8d58a837bc2cc9cf))
+* **src:** Add block for tools when job is running ([d4e3f91](https://github.com/ticklepoke/pathfinding/commit/d4e3f91cf0ee386899f7bd78f92b4dd267f26070))
+* **src:** Add click detection ([bf74bb0](https://github.com/ticklepoke/pathfinding/commit/bf74bb0abf6c7d981ac08bd76bb02156dfccb4c8))
+* **src:** Add keyboard shortcuts and dynamic cursor ([f98b08c](https://github.com/ticklepoke/pathfinding/commit/f98b08c5bc10ca83d39416b6728998553e8d25aa))
+* **store:** Add tools to store ([4147af0](https://github.com/ticklepoke/pathfinding/commit/4147af0e0737e7bb12769796617ee8f76a1e1c6c))
+
+
+### Build System
+
+* **eslint:** Add indent setting for switch case ([398d871](https://github.com/ticklepoke/pathfinding/commit/398d8711f48b40e7a7ee3687eba4684a4c5b9641))
+
+
+### Code Refactoring
+
+* **Adj list:** Refactor adj list number to string ([846b701](https://github.com/ticklepoke/pathfinding/commit/846b70104c7f3e0fef057070fe46b42a2b20f2af))
+* **Cursor:** Refactor cursor to individual grids ([09a24ce](https://github.com/ticklepoke/pathfinding/commit/09a24ce097447f9e69adc4e8082ef08d30b2ee51))
+
 ### [0.1.29](https://github.com/ticklepoke/pathfinding/compare/v0.1.28...v0.1.29) (2020-12-27)
 
 
