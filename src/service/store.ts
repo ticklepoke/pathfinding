@@ -14,8 +14,8 @@ const algorithmToEnum = {
 
 export function findPath$(
 	adjList: IAdjacencyList,
-	start: number,
-	end?: number
+	start: string,
+	end?: string
 ) {
 	const selectedAlgo = store.getState().algorithm.algorithm;
 	const path = algorithmToEnum[selectedAlgo](adjList, start, end);
