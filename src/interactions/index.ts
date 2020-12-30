@@ -1,7 +1,6 @@
 import { store } from "index";
 import { Store } from "redux";
 import { fromEvent, Observable } from "rxjs";
-import { dispatch } from "rxjs/internal/observable/pairs";
 import { filter, map } from "rxjs/operators";
 
 import { JobStatus } from "store/Job";
