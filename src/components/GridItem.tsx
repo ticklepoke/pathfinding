@@ -9,12 +9,19 @@ import { DrawTools, getActivatedTool } from "store/Tools";
 
 interface IGridItemProps {
 	uuid: string;
+	obstacles: Set<string>;
 	start: string;
 	end?: string;
 	path$?: Observable<string>;
 }
 
-export default function GridItem({ uuid, start, end, path$ }: IGridItemProps) {
+const GridItem: React.FC<IGridItemProps> = ({
+	uuid,
+	start,
+	end,
+	path$,
+	obstacles,
+}) => {
 	const [found, setFound] = useState(false);
 	const dispatch = useDispatch();
 	const selectedTool = useSelector(getActivatedTool);
@@ -41,6 +48,7 @@ export default function GridItem({ uuid, start, end, path$ }: IGridItemProps) {
 		return () => subSink.unsubscribe();
 	});
 
+	// TODO: logic for clashing types
 	return (
 		<div
 			className={classnames(
@@ -48,6 +56,7 @@ export default function GridItem({ uuid, start, end, path$ }: IGridItemProps) {
 				{ "grid-item-start": start === uuid },
 				{ "grid-item-end": end === uuid },
 				{ "grid-item-found": found },
+				{ "grid-item-obstacle": obstacles.has(uuid) },
 				{
 					"cursor-cell": selectedTool !== DrawTools.NoTool,
 				}
@@ -57,4 +66,6 @@ export default function GridItem({ uuid, start, end, path$ }: IGridItemProps) {
 			{uuid}
 		</div>
 	);
-}
+};
+
+export default GridItem;
