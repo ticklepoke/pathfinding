@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.33](https://github.com/ticklepoke/pathfinding/compare/v0.1.32...v0.1.33) (2021-01-01)
+
+
+### Features
+
+* **Obstacles:** Add ability to draw obstacles ([207d8f7](https://github.com/ticklepoke/pathfinding/commit/207d8f77a52feb1b7bf8b7101d3e80b18fa5aaa7))
+
+
+### Build System
+
+* **eslint:** Change react eslint config ([480879e](https://github.com/ticklepoke/pathfinding/commit/480879e8ec35b6c9eb37e0e4543863a8e79dd808))
+* **package.json:** Change prettier command ([c1aa335](https://github.com/ticklepoke/pathfinding/commit/c1aa3353429d64a479b5f545fe0dff1df7ca5e59))
+
 ### [0.1.32](https://github.com/ticklepoke/pathfinding/compare/v0.1.31...v0.1.32) (2020-12-30)
 
 
