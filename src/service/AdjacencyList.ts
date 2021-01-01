@@ -4,7 +4,11 @@ export interface IAdjacencyList {
 	[key: string]: string[];
 }
 
-export default function AdjacencyList(rows: number, cols: number) {
+export default function AdjacencyList(
+	rows: number,
+	cols: number,
+	obstacles: Set<string>
+) {
 	const DIRECTIONS = [
 		[-1, -1],
 		[-1, 0],
@@ -30,14 +34,17 @@ export default function AdjacencyList(rows: number, cols: number) {
 					nextRow < 0 ||
 					nextRow >= grid.length ||
 					nextCol < 0 ||
-					nextCol >= grid[0].length
+					nextCol >= grid[0].length ||
+					obstacles.has(grid[nextRow][nextCol])
 				) {
 					return;
 				}
 				curr.push(grid[nextRow][nextCol]);
 			});
 
-			adjList[entry] = curr;
+			if (!obstacles.has(entry)) {
+				adjList[entry] = curr;
+			}
 		});
 	});
 

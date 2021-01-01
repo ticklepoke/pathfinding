@@ -77,6 +77,12 @@
 
 .grid-item-end {
 	background-color: blue;
+	color: white;
+}
+
+.grid-item-obstacle {
+	background-color: black;
+	color: white;
 }
 
 .number-grid-container {
